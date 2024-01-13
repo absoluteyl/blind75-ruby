@@ -3,15 +3,13 @@ class TwoSum
   attr_accessor :nums, :target
 
   def solution
-    last_i = nums.length - 1
-    for i in 0..last_i
-        a = nums[i]
-        for j in 0..last_i
-            next if i == j
-            if nums[j] == target - a
-                return [i, j]
-            end
+    nums.each_with_index do |a, i|
+      nums.each_with_index do |b, j|
+        next if i == j
+        if b == target - a
+          return [i, j]
         end
+      end
     end
   end
 end
