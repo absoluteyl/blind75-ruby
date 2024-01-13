@@ -3,15 +3,16 @@ class TwoSum
   attr_accessor :nums, :target
 
   def solution
-    nums.each_with_index do |a, i|
-      nums.each_with_index do |b, j|
-        next if i == j
-        if b == target - a
-          return [i, j]
-        end
+    hash = {}
+    nums.each_with_index do |num, i|
+      if hash[target - num]
+        return [hash[target - num], i]
+      else
+        hash[num] = i
       end
     end
   end
+  # ref: https://leetcode.com/problems/two-sum/solutions/3077337/ruby-solution-code-with-step-by-step-instructions
 end
 
 RSpec.describe TwoSum, "#solution" do
