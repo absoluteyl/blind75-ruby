@@ -11,5 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.10, RVM: ruby-3.2.2 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="irb (v1.6.2, RVM: ruby-3.2.2 [global]) [gem]" level="application" />
   </component>
 </module>
