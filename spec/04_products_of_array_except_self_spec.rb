@@ -3,7 +3,18 @@ class ProductExceptSelf
   attr_accessor :nums
 
   def product_except_self
+    product = []
+    left = right = 1
+    nums.each do |num|
+      product << right
+      right *= num
+    end
 
+    (nums.length - 1).downto(0) do |i|
+      product[i] *= left
+      left *= nums[i]
+    end
+    product
   end
 end
 
