@@ -2,7 +2,7 @@ class BestTimeBuyAndSell
 
   attr_accessor :prices
 
-  def max_profix
+  def max_profit
     profit = 0
     prices.each_with_index do |price, idx|
 
@@ -11,7 +11,7 @@ class BestTimeBuyAndSell
   end
 end
 
-RSpec.describe BestTimeBuyAndSell, "#max_profix" do
+RSpec.describe BestTimeBuyAndSell, "#max_profit" do
   before(:each) do
     @best_time_buy_and_sell = BestTimeBuyAndSell.new
   end
@@ -21,7 +21,7 @@ RSpec.describe BestTimeBuyAndSell, "#max_profix" do
   end
 
   def should_return(expected)
-    expect(@best_time_buy_and_sell.max_profix).to eq(expected)
+    expect(@best_time_buy_and_sell.max_profit).to eq(expected)
   end
 
   it do
