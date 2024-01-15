@@ -3,7 +3,17 @@ class ContainsDuplicate
   attr_accessor :nums
 
   def contains_duplicate
-
+    hash = {}
+    duplicated = false
+    nums.each do |num|
+      if hash[num].nil?
+        hash[num] = true
+      else
+        duplicated = true
+        break
+      end
+    end
+    duplicated
   end
 end
 
