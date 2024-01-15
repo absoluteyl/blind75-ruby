@@ -21,17 +21,17 @@ RSpec.describe Number1Bits, "#hammimg_weight" do
   end
 
   it do
-    given(00000000000000000000000000001011)
+    given(0b00000000000000000000000000001011)
     should_return(3)
   end
 
   it do
-    given(00000000000000000000000010000000)
+    given(0b00000000000000000000000010000000)
     should_return(1)
   end
 
   it do
-    given(11111111111111111111111111111101)
+    given(0b11111111111111111111111111111101)
     should_return(31)
   end
 end
