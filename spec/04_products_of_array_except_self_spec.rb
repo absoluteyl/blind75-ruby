@@ -3,14 +3,15 @@ class ProductExceptSelf
   attr_accessor :nums
 
   def product_except_self
-    product = []
+    length = nums.length
+    product = Array.new(length, 1)
     left = right = 1
-    nums.each do |num|
-      product << right
-      right *= num
+    0.upto(length - 1) do |i|
+      product[i] = right
+      right *= nums[i]
     end
 
-    (nums.length - 1).downto(0) do |i|
+    (length - 1).downto(0) do |i|
       product[i] *= left
       left *= nums[i]
     end
