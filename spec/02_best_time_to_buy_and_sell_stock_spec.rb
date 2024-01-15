@@ -4,8 +4,15 @@ class BestTimeBuyAndSell
 
   def max_profit
     profit = 0
+    min_idx = 0
     prices.each_with_index do |price, idx|
-
+        next if idx == 0
+        previous_price = prices[min_idx]
+        if price > previous_price
+            profit = [(price - previous_price), profit].max
+        else
+            min_idx = idx
+        end
     end
     profit
   end
