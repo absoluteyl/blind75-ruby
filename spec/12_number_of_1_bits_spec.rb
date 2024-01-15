@@ -3,7 +3,7 @@ class Number1Bits
   attr_accessor :n
 
   def hammimg_weight
-
+    n.to_s(2).count('1')
   end
 end
 
