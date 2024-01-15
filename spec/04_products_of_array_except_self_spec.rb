@@ -1,8 +1,6 @@
 class ProductExceptSelf
 
-  attr_accessor :nums
-
-  def product_except_self
+  def product_except_self(nums)
     length = nums.length
     product = Array.new(length, 1)
     left = right = 1
@@ -25,11 +23,11 @@ RSpec.describe ProductExceptSelf, "#product_except_self" do
   end
 
   def given(nums)
-    @product_except_self.nums = nums
+    @result = @product_except_self.product_except_self(nums)
   end
 
   def should_return(expected)
-    expect(@product_except_self.product_except_self).to eq(expected)
+    expect(@result).to eq(expected)
   end
 
   it do

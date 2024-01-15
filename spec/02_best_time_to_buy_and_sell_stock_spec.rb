@@ -1,8 +1,6 @@
 class BestTimeBuyAndSell
 
-  attr_accessor :prices
-
-  def max_profit
+  def max_profit(prices)
     profit = 0
     min_price = prices[0]
     prices.each do |price|
@@ -23,11 +21,11 @@ RSpec.describe BestTimeBuyAndSell, "#max_profit" do
   end
 
   def given(prices)
-    @best_time_buy_and_sell.prices = prices
+    @result = @best_time_buy_and_sell.max_profit(prices)
   end
 
   def should_return(expected)
-    expect(@best_time_buy_and_sell.max_profit).to eq(expected)
+    expect(@result).to eq(expected)
   end
 
   it do

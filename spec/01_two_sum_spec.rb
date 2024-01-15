@@ -1,8 +1,6 @@
 class TwoSum
 
-  attr_accessor :nums, :target
-
-  def solution
+  def solution(nums, target)
     hash = {}
     nums.each_with_index do |num, i|
       if hash[target - num]
@@ -21,12 +19,11 @@ RSpec.describe TwoSum, "#solution" do
   end
 
   def given(nums, target)
-    @two_sum.nums = nums
-    @two_sum.target = target
+    @result = @two_sum.solution(nums, target)
   end
 
   def should_return(expected)
-    expect(@two_sum.solution).to eq(expected)
+    expect(@result).to eq(expected)
   end
 
   it do

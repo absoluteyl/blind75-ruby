@@ -1,8 +1,6 @@
 class Number1Bits
 
-  attr_accessor :n
-
-  def hammimg_weight
+  def hammimg_weight(n)
     count = 0
     while n != 0
       count += 1 if n % 2 == 1
@@ -18,11 +16,11 @@ RSpec.describe Number1Bits, "#hammimg_weight" do
   end
 
   def given(n)
-    @number_1_bits.n = n
+    @result = @number_1_bits.hammimg_weight(n)
   end
 
   def should_return(expected)
-    expect(@number_1_bits.hammimg_weight).to eq(expected)
+    expect(@result).to eq(expected)
   end
 
   it do

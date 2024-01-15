@@ -1,8 +1,6 @@
 class ContainsDuplicate
 
-  attr_accessor :nums
-
-  def contains_duplicate
+  def contains_duplicate(nums)
     hash = {}
     nums.each do |num|
       return true if hash[num]
@@ -18,11 +16,11 @@ RSpec.describe ContainsDuplicate, "#contains_duplicate" do
   end
 
   def given(nums)
-    @contains_duplicate.nums = nums
+    @result = @contains_duplicate.contains_duplicate(nums)
   end
 
   def should_return(expected)
-    expect(@contains_duplicate.contains_duplicate).to eq(expected)
+    expect(@result).to eq(expected)
   end
 
   it do
