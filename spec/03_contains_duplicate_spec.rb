@@ -4,16 +4,11 @@ class ContainsDuplicate
 
   def contains_duplicate
     hash = {}
-    duplicated = false
     nums.each do |num|
-      if hash[num].nil?
-        hash[num] = true
-      else
-        duplicated = true
-        break
-      end
+      return true if hash[num]
+      hash[num] = true
     end
-    duplicated
+    false
   end
 end
 
