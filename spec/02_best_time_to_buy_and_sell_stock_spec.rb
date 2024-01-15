@@ -3,6 +3,11 @@ class BestTimeBuyAndSell
   attr_accessor :prices
 
   def max_profix
+    profit = 0
+    prices.each_with_index do |price, idx|
+
+    end
+    profit
   end
 end
 
